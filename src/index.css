@@ -1,6 +1,11 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+/* Importing Google Fonts for the 'Inter' font family */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/*bootstrap-icons css  */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+
+
+/* Root variables for color scheme, font sizes, line heights, and font family */
 
 :root {
   --clr-primary: #0aad0a;
@@ -31,6 +36,7 @@
   --fontFamily: "Inter", sans-serif;
 }
 
+/* Dark theme colors applied when [data-bs-theme="dark"] is active */
 [data-bs-theme="dark"] {
   --clr-primary: #286c28;
   --clr-secondary: #222934;
@@ -43,6 +49,8 @@
   --clr-box2: #1b2c2c;
   --clr-box3: #1a2537;
 }
+
+/* Media queries to adjust font sizes and line heights for smller screens */
 
 @media (max-width: 768px) {
   :root {
@@ -58,132 +66,67 @@
   }
 }
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+
+/* General reset for all HTML elements, removing default margins and padding  */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
   font-family: var(--fontFamily);
 }
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
 body {
-  line-height: 1;
+	line-height: 1;
 }
-ol,
-ul {
-  list-style: none;
+ol, ul {
+	list-style: none;
 }
-blockquote,
-q {
-  quotes: none;
+blockquote, q {
+	quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
 }
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
+/* Override Boostrap default .container max-width to a custom size */
+.container {
+  max-width: 1440px;
+}
+
+@media screen and (min-width : 1280px){
+  .container{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* Main heading styles */
 .main-heading {
   font-size: var(--fs-main);
   color: var(--clr-heading);
@@ -198,53 +141,54 @@ table {
   line-height: var(--lg-heading);
 }
 
+
 .sub-heading {
   font-size: var(--fs-sub-heading);
-  color: var(--headingClr);
+  color: var(--clr-heading);
   font-weight: bold;
   line-height: var(--lh-sub-heading);
 }
 
+
 .title {
   font-size: var(--fs-body);
-  color: var(--headingClr);
+  color: var(--clr-heading);
   font-weight: bold;
   line-height: 20px;
-  line-height: var(--lh-sub-heading);
 }
 
 .body-text {
   font-size: var(--fs-body);
   color: var(--clr-text);
-  line-height: 20px;
+ 
   line-height: var(--lh-body);
 }
 
 .small-text {
   font-size: var(--fs-small);
   color: var(--clr-text);
-  line-height: 14px;
+
   line-height: var(--lh-small);
 }
 
 .primary-text {
-  color: #0aad0a !important;
+  color:var(--clr-primary) !important;
 }
 
 .text-clr {
-  color: var(--clr-text) !important;
+  color:var(--clr-text) !important;
 }
-
 .text-white {
-  color: var(--clr-white) !important;
+  color:var(--clr-white) !important;
 }
 
 .bg-light {
-  background-color: var(--clr-bg) !important;
+ background-color: var(--clr-bg) !important;
 }
 
 .primary-btn {
-  background: var(--clr-primary) !important;
+  border: 1px solid var(--clr-primary) !important;
+  background:var(--clr-primary) !important;
   border-radius: 4px;
   color: var(--clr-white);
   font-size: var(--fs-body);
@@ -257,6 +201,11 @@ table {
   transition: all 0.2s ease-in-out;
   border: none;
 }
+
+.primary-btn:hover{
+
+}
+
 
 .secondary-btn {
   border: 1px solid var(--clr-secondary);
@@ -272,9 +221,6 @@ table {
   transition: all 0.2s ease-in-out;
 }
 
-.secondary-btn:hover {
-  background: var(--clr-secondary);
+.secondary-btn:hover{
+  background-color: var(--clr-secondary);
 }
-
-
-
